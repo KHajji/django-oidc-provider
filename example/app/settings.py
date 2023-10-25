@@ -20,11 +20,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "corsheaders",
     'app',
     'oidc_provider',
 ]
 
 MIDDLEWARE_CLASSES = [
+    "corsheaders.middleware.CorsMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -34,6 +36,13 @@ MIDDLEWARE_CLASSES = [
     'oidc_provider.middleware.SessionManagementMiddleware',
 ]
 MIDDLEWARE = MIDDLEWARE_CLASSES
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "http://localhost:8000",
+    "http://rivm-lspilot-l01o.rivm.ssc-campus.nl"
+]
+
 
 TEMPLATES = [
     {
@@ -89,3 +98,4 @@ LOGIN_REDIRECT_URL = '/'
 
 SITE_URL = 'http://localhost:3000'
 OIDC_SESSION_MANAGEMENT_ENABLE = True
+OIDC_INTROSPECTION_VALIDATE_AUDIENCE_SCOPE = False
