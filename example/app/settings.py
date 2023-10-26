@@ -1,6 +1,5 @@
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
@@ -35,31 +34,13 @@ MIDDLEWARE_CLASSES = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "oidc_provider.middleware.SessionManagementMiddleware",
-    "django.contrib.admin",
-    "django.contrib.auth",
-    "django.contrib.contenttypes",
-    "django.contrib.sessions",
-    "django.contrib.messages",
-    "django.contrib.staticfiles",
-    "app",
-    "oidc_provider",
-]
-
-MIDDLEWARE_CLASSES = [
-    "django.contrib.sessions.middleware.SessionMiddleware",
-    "django.middleware.common.CommonMiddleware",
-    # 'django.middleware.csrf.CsrfViewMiddleware',
-    "django.contrib.auth.middleware.AuthenticationMiddleware",
-    "django.contrib.messages.middleware.MessageMiddleware",
-    "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "oidc_provider.middleware.SessionManagementMiddleware",
 ]
 MIDDLEWARE = MIDDLEWARE_CLASSES
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:8000",
-    "http://rivm-lspilot-l01o.rivm.ssc-campus.nl",
+    "http://rivm-lspilot-l01o.rivm.ssc-campus.nl"
 ]
 
 
@@ -118,8 +99,3 @@ LOGIN_REDIRECT_URL = "/"
 SITE_URL = "http://localhost:3000"
 OIDC_SESSION_MANAGEMENT_ENABLE = True
 OIDC_INTROSPECTION_VALIDATE_AUDIENCE_SCOPE = False
-CSRF_TRUSTED_ORIGINS = [
-    "http://rivm-lspilot-l01o.rivm.ssc-campus.nl",
-    "http://localhost",
-]
-
